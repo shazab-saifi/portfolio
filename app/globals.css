@@ -12,6 +12,7 @@
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--color-neutral-300) transparent;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {

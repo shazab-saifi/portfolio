@@ -44,7 +44,7 @@ const techStack = [
 export function TechStack() {
   return (
     <section id="tech-stack" className="flex flex-col gap-5">
-      <Subheading>Tech Stack</Subheading>
+      <Subheading id="tech-stack">Tech Stack</Subheading>
       <div className="flex flex-col border-t border-neutral-300">
         {techStack.map((row) => (
           <div

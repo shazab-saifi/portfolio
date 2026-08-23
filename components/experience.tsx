@@ -28,7 +28,7 @@ export function Experience() {
 
   return (
     <section id="experience" className="flex flex-col gap-5">
-      <Subheading>Experience</Subheading>
+      <Subheading id="experience">Experience</Subheading>
       <div className="flex flex-col border-y border-neutral-300 py-3">
         {experiences.map((experience) => {
           const open = openId === experience.company;

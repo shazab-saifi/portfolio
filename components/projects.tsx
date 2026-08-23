@@ -28,7 +28,7 @@ const projects = [
 export function Projects() {
   return (
     <section id="projects" className="flex flex-col gap-5">
-      <Subheading>Projects</Subheading>
+      <Subheading id="projects">Projects</Subheading>
       <div className="flex flex-col">
         {projects.map((project) => (
           <ProjectItem key={project.name} {...project} />

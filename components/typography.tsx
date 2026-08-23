@@ -57,7 +57,7 @@ export function LinkText({
   return (
     <Tag
       className={cn(
-        "text-sm leading-4.5 font-medium text-neutral-500 transition-colors hover:text-neutral-800",
+        "text-sm leading-4.5 font-medium text-neutral-800 transition-colors",
         className,
       )}
       {...props}
