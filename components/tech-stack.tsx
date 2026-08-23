@@ -1,4 +1,5 @@
 import { Body, Subheading } from "@/components/typography";
+import { MotionDiv } from "./motion";
 
 const techStack = [
   { label: "Languages", items: ["Typescript", "Python"] },
@@ -43,13 +44,14 @@ const techStack = [
 
 export function TechStack() {
   return (
-    <section id="tech-stack" className="flex flex-col gap-5">
-      <Subheading id="tech-stack">Tech Stack</Subheading>
-      <div className="flex flex-col border-t border-neutral-300">
-        {techStack.map((row) => (
-          <div
-            key={row.label}
-            className="flex items-start border-b border-neutral-300 py-3"
+    <MotionDiv delay={0.2} className="flex flex-col gap-5">
+      <Subheading id="skills">Skills</Subheading>
+      <div className="flex flex-col">
+        {techStack.map((row, idx) => (
+          <MotionDiv
+            key={idx}
+            delay={idx * 0.05}
+            className={`flex items-start border-neutral-300 py-3 ${idx === 0 ? "border-y" : "border-b"}`}
           >
             <Body
               as="span"
@@ -64,9 +66,9 @@ export function TechStack() {
               —
             </Body>
             <Body>{row.items.join(", ")}</Body>
-          </div>
+          </MotionDiv>
         ))}
       </div>
-    </section>
+    </MotionDiv>
   );
 }

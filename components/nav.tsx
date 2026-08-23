@@ -81,7 +81,7 @@ export function Nav() {
             )}
             <LinkText
               onClick={(e) => handleClick(e, heading.id)}
-              className={`transition-all ${
+              className={`cursor-pointer transition-all ${
                 activeNav.toLowerCase() === heading.id
                   ? "text-base font-semibold"
                   : "text-neutral-600"

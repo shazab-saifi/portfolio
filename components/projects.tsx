@@ -1,3 +1,4 @@
+import { MotionDiv } from "@/components/motion";
 import { Subheading } from "@/components/typography";
 import { ProjectItem } from "@/components/project-item";
 
@@ -27,13 +28,15 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="flex flex-col gap-5">
+    <MotionDiv delay={0.3} id="projects" className="flex flex-col gap-5">
       <Subheading id="projects">Projects</Subheading>
       <div className="flex flex-col">
-        {projects.map((project) => (
-          <ProjectItem key={project.name} {...project} />
+        {projects.map((project, idx) => (
+          <MotionDiv key={project.name} delay={idx * 0.05}>
+            <ProjectItem {...project} />
+          </MotionDiv>
         ))}
       </div>
-    </section>
+    </MotionDiv>
   );
 }

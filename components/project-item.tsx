@@ -34,7 +34,7 @@ export function ProjectItem({
         <ArrowUpRightIcon
           size={16}
           weight="bold"
-          className="text-neutral-600 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          className="text-neutral-500 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-neutral-800"
           aria-hidden
         />
       </span>

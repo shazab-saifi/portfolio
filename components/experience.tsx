@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
   ArrowUpRightIcon,
   CaretDownIcon,
   DotOutlineIcon,
 } from "@phosphor-icons/react";
+import { MotionDiv } from "@/components/motion";
 import { Body, Caption, LinkText, Subheading } from "@/components/typography";
 
 const experiences = [
@@ -26,8 +27,29 @@ const experiences = [
 export function Experience() {
   const [openId, setOpenId] = useState<string | null>(null);
 
+  useEffect(() => {
+    const handler = () => {
+      const documentHeight = document.documentElement.scrollHeight;
+      const currentScroll = window.innerHeight + window.scrollY;
+
+      document.body.classList.toggle(
+        "is-fully-scrolled",
+        currentScroll < documentHeight - 1,
+      );
+    };
+
+    handler();
+    window.addEventListener("scroll", handler, { passive: true });
+    window.addEventListener("resize", handler);
+
+    return () => {
+      window.removeEventListener("scroll", handler);
+      window.removeEventListener("resize", handler);
+    };
+  }, []);
+
   return (
-    <section id="experience" className="flex flex-col gap-5">
+    <MotionDiv delay={0.1} id="experience" className="flex flex-col gap-5">
       <Subheading id="experience">Experience</Subheading>
       <div className="flex flex-col border-y border-neutral-300 py-3">
         {experiences.map((experience) => {
@@ -102,6 +124,6 @@ export function Experience() {
           );
         })}
       </div>
-    </section>
+    </MotionDiv>
   );
 }

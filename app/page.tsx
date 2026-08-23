@@ -10,7 +10,10 @@ import { TechStack } from "@/components/tech-stack";
 export default function Home() {
   return (
     <>
-      <div className="relative z-10 mx-auto w-full flex-1 bg-neutral-200 shadow-[0_24px_48px_rgba(0,0,0,0.18)]">
+      <div
+        id="page"
+        className="relative z-10 mx-auto w-full flex-1 bg-neutral-200"
+      >
         <Nav />
         <ProgessiveBlur />
         <main className="mx-auto flex w-full max-w-136.5 flex-col gap-16 px-6 pt-12 pb-40 lg:px-0 lg:pt-41">
