@@ -16,7 +16,7 @@ const experiences = [
     role: "Full-Stack Intern",
     period: "Oct 2025 - Nov 2025",
     highlights: [
-      "I’m especially interested in product design, frontend engineering, interaction, and the systems that bring all of them together.",
+      "Developed an MVP for a Figma-to-server workflow using Codex, exploring AI-assisted product development and automation.",
       "Implemented Figma designs into responsive, production-ready interfaces with a strong focus on visual fidelity and usability.",
       "Added delightful animations, micro-interactions, and motion details to make interfaces feel more responsive and engaging.",
     ],
@@ -24,7 +24,7 @@ const experiences = [
 ];
 
 export function Experience() {
-  const [openId, setOpenId] = useState<string | null>(experiences[0].company);
+  const [openId, setOpenId] = useState<string | null>(null);
 
   return (
     <section id="experience" className="flex flex-col gap-5">
@@ -42,7 +42,7 @@ export function Experience() {
                 className="group flex cursor-pointer items-center justify-between pr-2 text-left"
               >
                 <div className="flex flex-col gap-2">
-                  <span className="flex items-center gap-2">
+                  <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
                     <Image
                       src={experience.logo}
                       alt=""
@@ -62,7 +62,7 @@ export function Experience() {
                       aria-hidden
                     />
                   </span>
-                  <span className="flex items-center gap-2">
+                  <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
                     <DotOutlineIcon
                       size={18}
                       className="shrink-0 text-neutral-700"

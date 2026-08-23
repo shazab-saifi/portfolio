@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     "Hi, I’m Shazab Saifi — a Design Engineer and full stack developer who loves to build with AI.",
 };
 
+// Design Link - https://www.figma.com/design/AOt0XLPIFoEZmvXredkIcy/My-Portfolio?node-id=2031-52&t=x6G6mMthbNIbqDKy-4
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
