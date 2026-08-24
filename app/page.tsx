@@ -16,7 +16,7 @@ export default function Home() {
       >
         <Nav />
         <ProgessiveBlur />
-        <main className="mx-auto flex w-full max-w-136.5 flex-col gap-16 px-6 pt-12 pb-40 lg:px-0 lg:pt-41">
+        <main className="mx-auto flex w-full max-w-136.5 flex-col gap-16 px-6 pt-12 pb-20 lg:px-0 lg:pt-41 lg:pb-40">
           <About />
           <Experience />
           <TechStack />

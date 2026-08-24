@@ -43,7 +43,7 @@ export function SiteFooter() {
       <div aria-hidden style={{ height }} />
       <footer
         ref={footerRef}
-        className="bg-accent fixed inset-x-0 bottom-0 z-0 grid min-h-44 overflow-hidden"
+        className="bg-brand fixed inset-x-0 bottom-0 z-0 grid min-h-44 overflow-hidden"
       >
         <Image
           src="/footer.svg"
@@ -56,7 +56,7 @@ export function SiteFooter() {
         />
         <h2
           id="socials"
-          className="col-start-1 row-start-1 mx-auto flex w-full max-w-136.5 flex-wrap items-center justify-between gap-x-10 gap-y-3 self-start px-6 pt-[2.656%] lg:w-136.5 lg:px-0"
+          className="col-start-1 row-start-1 mx-auto flex w-full max-w-136.5 flex-wrap items-center justify-between gap-x-10 gap-y-3 self-start px-6 pt-5 lg:w-136.5 lg:px-0 lg:pt-[2.656%]"
         >
           {socials.map(({ label, href, Icon }) => (
             <a

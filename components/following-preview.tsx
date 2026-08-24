@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import {
   motion,
@@ -28,17 +28,29 @@ export const FollowingPreview = ({
   const y = useMotionValue(0);
   const ref = React.useRef<HTMLDivElement>(null);
   const [isInside, setIsInside] = useState<boolean>(false);
+  const [isFinePointer, setIsFinePointer] = useState<boolean>(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => setIsFinePointer(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isFinePointer) return;
     x.set(e.clientX);
     y.set(e.clientY);
   };
 
   const handleMouseLeave = () => {
+    if (!isFinePointer) return;
     setIsInside(false);
   };
 
   const handleMouseEnter = () => {
+    if (!isFinePointer) return;
     setIsInside(true);
   };
 
@@ -56,7 +68,7 @@ export const FollowingPreview = ({
       {typeof document !== "undefined" &&
         createPortal(
           <AnimatePresence>
-            {isInside && hasPreview && (
+            {isInside && isFinePointer && hasPreview && (
               <FollowPointer
                 x={x}
                 y={y}
