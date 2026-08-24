@@ -70,7 +70,7 @@ export function Nav() {
             {activeNav.toLowerCase() === heading.id && (
               <motion.span
                 layoutId="nav-active-indicator"
-                className="bg-accent absolute top-1 -left-6 size-4 rounded-full will-change-transform"
+                className="absolute top-1 -left-6 size-4 rounded-full bg-orange-600 will-change-transform"
                 transition={{
                   type: "spring",
                   stiffness: 700,

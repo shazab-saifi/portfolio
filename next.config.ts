@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "media.licdn.com",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
+      },
     ],
   },
   allowedDevOrigins: ["192.168.1.39"],
