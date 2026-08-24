@@ -11,6 +11,7 @@ type ProjectItemProps = {
   icon: string;
   inDevelopment?: boolean;
   href: string;
+  sourceHref?: string;
   videoUrl?: string;
   imageUrl?: string;
 };
@@ -21,34 +22,47 @@ export function ProjectItem({
   icon,
   inDevelopment,
   href,
+  sourceHref,
   videoUrl,
   imageUrl,
 }: ProjectItemProps) {
   return (
     <FollowingPreview videoUrl={videoUrl} imageUrl={imageUrl}>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group flex flex-col gap-2 border-b border-neutral-300 py-3"
-      >
-        <span className="flex items-center gap-2">
-          <Image src={icon} alt="" width={18} height={18} />
-          <LinkText
-            as="span"
-            className="font-semibold text-neutral-800 group-hover:underline"
+      <div className="flex flex-col gap-2 border-b border-neutral-300 py-3">
+        <div className="flex items-center justify-between gap-4">
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/project flex min-w-0 items-center gap-2"
           >
-            {name}
-          </LinkText>
-          <ArrowUpRightIcon
-            size={16}
-            weight="bold"
-            className="text-neutral-500 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-neutral-800"
-            aria-hidden
-          />
-          {inDevelopment && <Badge variant="outline">In Development</Badge>}
-        </span>
-        <span className="flex gap-2">
+            <Image src={icon} alt="" width={18} height={18} />
+            <LinkText
+              as="span"
+              className="font-semibold text-neutral-800 group-hover/project:underline"
+            >
+              {name}
+            </LinkText>
+            <ArrowUpRightIcon
+              size={16}
+              weight="bold"
+              className="shrink-0 text-neutral-500 transition-transform duration-300 group-hover/project:translate-x-0.5 group-hover/project:-translate-y-0.5 group-hover/project:text-neutral-800"
+              aria-hidden
+            />
+            {inDevelopment && <Badge variant="outline">In Development</Badge>}
+          </a>
+          {sourceHref && (
+            <LinkText
+              href={sourceHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 text-neutral-500 hover:text-neutral-800 hover:underline"
+            >
+              Source code
+            </LinkText>
+          )}
+        </div>
+        <div className="flex gap-2">
           <DotOutlineIcon
             size={18}
             weight="bold"
@@ -56,8 +70,8 @@ export function ProjectItem({
             aria-hidden
           />
           <Body>{description}</Body>
-        </span>
-      </a>
+        </div>
+      </div>
     </FollowingPreview>
   );
 }

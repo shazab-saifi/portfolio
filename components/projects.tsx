@@ -9,6 +9,7 @@ const projects = [
       "Cluster is a modern, real-time chat app inspired by Discord. It features role-based access control, hierarchical permissions, and collaborative tools.",
     icon: "/projects/cluster.svg",
     href: "#",
+    sourceHref: "https://github.com/shazab-saifi/cluster",
     inDevelopment: true,
   },
   {
@@ -17,6 +18,7 @@ const projects = [
       "Quartz UI is a modern animated UI library for Next.js, with easy integration and a CLI for adding components.",
     icon: "/projects/quartz-ui.svg",
     href: "https://quartzui.shazab.site/",
+    sourceHref: "https://github.com/shazab-saifi/quartz-ui",
     videoUrl:
       "https://res.cloudinary.com/dlpjh3fcx/video/upload/v1771162566/quartzui_xzwwdg.mp4",
   },
@@ -26,6 +28,7 @@ const projects = [
       "Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, authentication, and personalized collections.",
     icon: "/projects/pixory.svg",
     href: "https://pixory.shazab.site/",
+    sourceHref: "https://github.com/shazab-saifi/pixory",
     videoUrl:
       "https://res.cloudinary.com/dlpjh3fcx/video/upload/v1771162714/pixory_ij9myc.mp4",
   },

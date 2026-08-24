@@ -49,9 +49,6 @@ export const FollowingPreview = ({
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
-      style={{
-        cursor: "none",
-      }}
       ref={ref}
       className={cn("relative", isInside && "z-50", className)}
     >
