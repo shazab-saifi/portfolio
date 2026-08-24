@@ -6,7 +6,7 @@ const projects = [
   {
     name: "Cluster",
     description:
-      "A Realtime Chat app inspired from discord, With permissions, role hierarchy and many more features.",
+      "Cluster is a modern, real-time chat app inspired by Discord. It features role-based access control, hierarchical permissions, and collaborative tools.",
     icon: "/projects/cluster.svg",
     href: "#",
     inDevelopment: true,

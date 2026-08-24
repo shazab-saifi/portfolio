@@ -120,13 +120,13 @@ export const FollowPointer = ({
           opacity: 0,
         }}
         className={
-          "min-w-max translate-y-5 overflow-hidden rounded-2xl bg-neutral-200/20 p-2 text-xs whitespace-nowrap shadow-2xl backdrop-blur-xs"
+          "aspect-videotranslate-y-5 min-w-max overflow-hidden rounded-2xl bg-neutral-200/20 p-2 text-xs whitespace-nowrap shadow-2xl backdrop-blur-xs"
         }
       >
         {videoUrl ? (
           <video
             src={videoUrl}
-            className="w-94 rounded-xl"
+            className="aspect-video w-94 rounded-xl"
             autoPlay
             muted
             playsInline
@@ -137,7 +137,7 @@ export const FollowPointer = ({
             alt=""
             width={200}
             height={200}
-            className="w-94 rounded-xl"
+            className="aspect-video w-94 rounded-xl"
           />
         ) : null}
       </motion.div>
