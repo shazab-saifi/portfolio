@@ -16,7 +16,7 @@ const projects = [
     description:
       "Quartz UI is a modern animated UI library for Next.js, with easy integration and a CLI for adding components.",
     icon: "/projects/quartz-ui.svg",
-    href: "#",
+    href: "https://quartzui.shazab.site/",
     videoUrl:
       "https://res.cloudinary.com/dlpjh3fcx/video/upload/v1771162566/quartzui_xzwwdg.mp4",
   },
@@ -25,7 +25,7 @@ const projects = [
     description:
       "Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, authentication, and personalized collections.",
     icon: "/projects/pixory.svg",
-    href: "#",
+    href: "https://pixory.shazab.site/",
     videoUrl:
       "https://res.cloudinary.com/dlpjh3fcx/video/upload/v1771162714/pixory_ij9myc.mp4",
   },
