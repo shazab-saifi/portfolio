@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr/ArrowUpRight";
+import { CodeIcon } from "@phosphor-icons/react/dist/ssr/Code";
 import { DotOutlineIcon } from "@phosphor-icons/react/dist/ssr/DotOutline";
 import { Body, LinkText } from "@/components/typography";
 import { Badge } from "./ui/badge";
@@ -52,14 +53,15 @@ export function ProjectItem({
             {inDevelopment && <Badge variant="outline">In Development</Badge>}
           </a>
           {sourceHref && (
-            <LinkText
+            <a
               href={sourceHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 text-neutral-500 hover:text-neutral-800 hover:underline"
+              aria-label={`View source code for `}
+              className="flex shrink-0 items-center justify-center rounded-full p-1 text-neutral-500 transition-all hover:bg-neutral-300 hover:text-neutral-800"
             >
-              Source code
-            </LinkText>
+              <CodeIcon size={12} aria-hidden />
+            </a>
           )}
         </div>
         <div className="flex gap-2">
