@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import {
   motion,
@@ -44,15 +44,30 @@ export const FollowingPreview = ({
     y.set(e.clientY);
   };
 
-  const handleMouseLeave = () => {
-    if (!isFinePointer) return;
-    setIsInside(false);
-  };
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
 
-  const handleMouseEnter = () => {
+  const handleMouseLeave = useCallback(() => {
     if (!isFinePointer) return;
-    setIsInside(true);
-  };
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+    setIsInside(false);
+  }, [isFinePointer]);
+
+  const handleMouseEnter = useCallback(() => {
+    if (!isFinePointer) return;
+    timerRef.current = setTimeout(() => {
+      setIsInside(true);
+      timerRef.current = null;
+    }, 100);
+  }, [isFinePointer]);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   const hasPreview = Boolean(videoUrl || imageUrl);
 
