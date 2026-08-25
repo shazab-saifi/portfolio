@@ -4,6 +4,7 @@ import { LinkText } from "@/components/typography";
 import { useHeadingsData } from "@/hooks/use-headings-data";
 import useIntersectionObserver from "@/hooks/use-interaction-observer";
 import { motion } from "motion/react";
+import { useLenis } from "lenis/react";
 import { useEffect, useRef, useState } from "react";
 
 const TOP_MARGIN = 164;
@@ -45,6 +46,8 @@ export function Nav() {
     };
   }, []);
 
+  const lenis = useLenis();
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const el = document.getElementById(id);
@@ -53,7 +56,7 @@ export function Nav() {
       const top = isInsideFixedContainer(el)
         ? document.documentElement.scrollHeight
         : window.scrollY + el.getBoundingClientRect().top - TOP_MARGIN;
-      window.scrollTo({ top, behavior: "smooth" });
+      lenis?.scrollTo(top);
       history.replaceState(null, "", `#${id}`);
     }
   };
