@@ -1,6 +1,7 @@
 import { MotionDiv } from "@/components/motion";
-import { Subheading } from "@/components/typography";
+import { Body, LinkText, Subheading } from "@/components/typography";
 import { ProjectItem } from "@/components/project-item";
+import { FigmaLogoIcon } from "@phosphor-icons/react/dist/ssr";
 
 const designs = [
   {
@@ -34,6 +35,17 @@ export function Designs() {
           </MotionDiv>
         ))}
       </div>
+      <Body className="flex items-center gap-1">
+        You can find more of my design work on my{" "}
+        <LinkText
+          href="https://www.figma.com/@shazabsaifi"
+          className="mr-0.5 inline-flex items-center text-neutral-600 underline transition-colors hover:text-neutral-800"
+        >
+          <FigmaLogoIcon size={18} />
+          Figma
+        </LinkText>{" "}
+        cummunity profile.
+      </Body>
     </MotionDiv>
   );
 }

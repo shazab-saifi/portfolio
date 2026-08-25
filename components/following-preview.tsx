@@ -129,7 +129,7 @@ export const FollowPointer = ({
           opacity: 0,
         }}
         className={
-          "aspect-video min-w-max translate-y-5 overflow-hidden rounded-2xl bg-neutral-200/20 p-2 text-xs whitespace-nowrap shadow-2xl backdrop-blur-xs"
+          "h-fit min-w-max translate-y-5 overflow-hidden rounded-2xl bg-neutral-200/20 p-2 text-xs whitespace-nowrap shadow-2xl backdrop-blur-xs"
         }
       >
         {videoUrl ? (
