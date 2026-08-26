@@ -35,11 +35,11 @@ export function Designs() {
           </MotionDiv>
         ))}
       </div>
-      <Body className="flex items-center gap-1">
+      <Body>
         You can find more of my design work on my{" "}
         <LinkText
           href="https://www.figma.com/@shazabsaifi"
-          className="mr-0.5 inline-flex items-center text-neutral-600 underline transition-colors hover:text-neutral-800"
+          className="mr-0.5 inline-flex translate-y-1 items-center text-neutral-600 underline transition-colors hover:text-neutral-800"
         >
           <FigmaLogoIcon size={18} />
           Figma

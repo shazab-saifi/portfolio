@@ -10,10 +10,10 @@ import ReactLenis from "lenis/react";
 
 export default function Home() {
   return (
-    <ReactLenis root options={{ duration: 1.5 }}>
+    <ReactLenis root>
       <div id="page" className="z-10 mx-auto w-full flex-1 bg-neutral-200">
         <ProgessiveBlur />
-        <main className="mx-auto flex w-full flex-col px-6 pb-20 lg:px-0 lg:pb-40">
+        <main className="mx-auto flex w-full flex-col px-6 pt-12 pb-20 lg:px-0 lg:pt-0 lg:pb-40">
           <div className="relative mx-auto">
             <Nav />
             <div className="flex max-w-136.5 flex-col gap-16">

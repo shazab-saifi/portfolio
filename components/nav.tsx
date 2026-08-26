@@ -33,13 +33,13 @@ export function Nav() {
       const top = isInsideFixedContainer(el)
         ? document.documentElement.scrollHeight
         : window.scrollY + el.getBoundingClientRect().top - TOP_MARGIN;
-      lenis?.scrollTo(top, { duration: 1.5 });
+      lenis?.scrollTo(top);
       history.replaceState(null, "", `#${id}`);
     }
   };
 
   return (
-    <div className="sticky top-47 z-20 hidden w-fit -translate-x-64 lg:block">
+    <div className="sticky top-47 z-20 hidden w-fit -translate-x-36 lg:block xl:-translate-x-48 2xl:-translate-x-64">
       <ul className="space-y-2">
         {headingsData.map((heading) => (
           <li key={heading.textContent} className="relative overflow-visible">
