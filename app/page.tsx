@@ -10,19 +10,20 @@ import ReactLenis from "lenis/react";
 
 export default function Home() {
   return (
-    <ReactLenis root options={{ lerp: 0.1, duration: 1 }}>
-      <div
-        id="page"
-        className="relative z-10 mx-auto w-full flex-1 bg-neutral-200"
-      >
-        <Nav />
+    <ReactLenis root options={{ duration: 1.5 }}>
+      <div id="page" className="z-10 mx-auto w-full flex-1 bg-neutral-200">
         <ProgessiveBlur />
-        <main className="mx-auto flex w-full max-w-136.5 flex-col gap-16 px-6 pt-12 pb-20 lg:px-0 lg:pt-41 lg:pb-40">
-          <About />
-          <Experience />
-          <TechStack />
-          <Projects />
-          <Designs />
+        <main className="mx-auto flex w-full flex-col px-6 pb-20 lg:px-0 lg:pb-40">
+          <div className="relative mx-auto">
+            <Nav />
+            <div className="flex max-w-136.5 flex-col gap-16">
+              <About />
+              <Experience />
+              <TechStack />
+              <Projects />
+              <Designs />
+            </div>
+          </div>
         </main>
       </div>
       <SiteFooter />

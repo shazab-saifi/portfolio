@@ -5,10 +5,9 @@ import { useHeadingsData } from "@/hooks/use-headings-data";
 import useIntersectionObserver from "@/hooks/use-interaction-observer";
 import { motion } from "motion/react";
 import { useLenis } from "lenis/react";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
-const TOP_MARGIN = 164;
-const LIFT_OFFSET = 160;
+const TOP_MARGIN = 188;
 
 function isInsideFixedContainer(el: HTMLElement) {
   let node = el.parentElement;
@@ -21,30 +20,8 @@ function isInsideFixedContainer(el: HTMLElement) {
 
 export function Nav() {
   const [activeNav, setActiveNav] = useState("");
-  const [lift, setLift] = useState(0);
-  const navRef = useRef<HTMLDivElement>(null);
   const { headingsData } = useHeadingsData();
   useIntersectionObserver(setActiveNav, activeNav);
-
-  useEffect(() => {
-    const update = () => {
-      const nav = navRef.current;
-      const container = nav?.parentElement;
-      if (!nav || !container) return;
-
-      const navBottom = TOP_MARGIN + nav.offsetHeight;
-      const containerBottom = container.getBoundingClientRect().bottom;
-      setLift(Math.max(0, navBottom + LIFT_OFFSET - containerBottom));
-    };
-
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-    return () => {
-      window.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
-    };
-  }, []);
 
   const lenis = useLenis();
 
@@ -56,17 +33,13 @@ export function Nav() {
       const top = isInsideFixedContainer(el)
         ? document.documentElement.scrollHeight
         : window.scrollY + el.getBoundingClientRect().top - TOP_MARGIN;
-      lenis?.scrollTo(top);
+      lenis?.scrollTo(top, { duration: 1.5 });
       history.replaceState(null, "", `#${id}`);
     }
   };
 
   return (
-    <div
-      ref={navRef}
-      style={{ transform: `translateY(${-lift}px)` }}
-      className="fixed top-41 left-1/12 z-20 hidden lg:block xl:left-1/8 2xl:left-1/5"
-    >
+    <div className="sticky top-47 z-20 hidden w-fit -translate-x-64 lg:block">
       <ul className="space-y-2">
         {headingsData.map((heading) => (
           <li key={heading.textContent} className="relative overflow-visible">
