@@ -18,7 +18,7 @@ const projects = [
       "Quartz UI is a modern animated UI library for Next.js, with easy integration and a CLI for adding components.",
     icon: "/projects/quartz-ui.svg",
     href: "https://quartzui.shazab.site/",
-    sourceHref: "https://github.com/shazab-saifi/quartz-ui",
+    sourceHref: "https://github.com/shazab-saifi/quartzui",
     videoUrl:
       "https://res.cloudinary.com/dlpjh3fcx/video/upload/v1771162566/quartzui_xzwwdg.mp4",
   },
