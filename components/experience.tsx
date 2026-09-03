@@ -14,13 +14,13 @@ const experiences = [
   {
     company: "Quarlatis LLP",
     logo: "https://media.licdn.com/dms/image/v2/D560BAQFRdrIZue68hA/company-logo_200_200/B56Zcq041lHoAM-/0/1748770197624?e=1788998400&v=beta&t=LdItwZhQa_B_n8isvTycvZGZfostFqvkkEx8mouzoP8",
-    role: "Full-Stack Intern",
-    period: "Oct 2025 - Nov 2025",
+    role: "Web designer",
+    period: "Oct 2025 - July 2026",
     href: "https://www.linkedin.com/company/quarlatis/?originalSubdomain=in",
     highlights: [
-      "Developed an MVP for a Figma-to-server workflow using Codex, exploring AI-assisted product development and automation.",
-      "Implemented Figma designs into responsive, production-ready interfaces with a strong focus on visual fidelity and usability.",
-      "Added delightful animations, micro-interactions, and motion details to make interfaces feel more responsive and engaging.",
+      "Designed responsive web interfaces with a strong focus on visual hierarchy, consistency, and usability.",
+      "Translated product requirements into high-fidelity layouts, user flows, and polished web experiences.",
+      "Collaborated with product and design teams to refine UI details, interactions, and overall user experience.",
     ],
   },
 ];
