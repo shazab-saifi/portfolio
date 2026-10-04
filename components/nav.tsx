@@ -3,9 +3,9 @@
 import { LinkText } from "@/components/typography";
 import { useHeadingsData } from "@/hooks/use-headings-data";
 import useIntersectionObserver from "@/hooks/use-interaction-observer";
-import { motion } from "motion/react";
+import { motion, useAnimate } from "motion/react";
 import { useLenis } from "lenis/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const TOP_MARGIN = 188;
 
@@ -22,8 +22,19 @@ export function Nav() {
   const [activeNav, setActiveNav] = useState("");
   const { headingsData } = useHeadingsData();
   useIntersectionObserver(setActiveNav, activeNav);
-
+  const [scope, animate] = useAnimate();
   const lenis = useLenis();
+
+  useEffect(
+    () => () => {
+      animate(
+        scope.current,
+        { x: [-8, 0] },
+        { duration: 0.3, ease: "easeInOut" },
+      );
+    },
+    [activeNav],
+  );
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -45,8 +56,9 @@ export function Nav() {
           <li key={heading.textContent} className="relative overflow-visible">
             {activeNav.toLowerCase() === heading.id && (
               <motion.span
+                ref={scope}
                 layoutId="nav-active-indicator"
-                className="absolute top-1 -left-6 size-4 rounded-full bg-orange-600 will-change-transform"
+                className="bg-brand absolute top-1 -left-6 size-4 rounded-full will-change-transform"
                 transition={{
                   type: "spring",
                   stiffness: 700,
