@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Instrument_Serif } from "next/font/google";
 import { IconProvider } from "@/components/icon-provider";
 import "./globals.css";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-neutral-200 font-sans text-neutral-800">
-        <IconProvider>{children}</IconProvider>
+        <TooltipProvider>
+          <IconProvider>{children}</IconProvider>
+        </TooltipProvider>
       </body>
     </html>
   );

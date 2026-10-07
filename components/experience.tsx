@@ -14,13 +14,13 @@ const experiences = [
   {
     company: "Quarlatis LLP",
     logo: "https://media.licdn.com/dms/image/v2/D560BAQFRdrIZue68hA/company-logo_200_200/B56Zcq041lHoAM-/0/1748770197624?e=1788998400&v=beta&t=LdItwZhQa_B_n8isvTycvZGZfostFqvkkEx8mouzoP8",
-    role: "Web designer",
-    period: "Oct 2025 - July 2026",
+    role: "Full Stack Intern",
+    period: "Oct 2025 - Nov 2025",
     href: "https://www.linkedin.com/company/quarlatis/?originalSubdomain=in",
     highlights: [
-      "Designed responsive web interfaces with a strong focus on visual hierarchy, consistency, and usability.",
-      "Translated product requirements into high-fidelity layouts, user flows, and polished web experiences.",
-      "Collaborated with product and design teams to refine UI details, interactions, and overall user experience.",
+      "Developed full-stack Web3 MVPs, building APIs, database schemas, and responsive frontend interfaces.",
+      "Translated product requirements into functional features, intuitive user flows, and polished web experiences.",
+      "Crafted UI interactions and microinteractions while collaborating across design and development to refine product experiences.",
     ],
   },
 ];

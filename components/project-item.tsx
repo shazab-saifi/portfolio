@@ -5,6 +5,7 @@ import { DotOutlineIcon } from "@phosphor-icons/react/dist/ssr/DotOutline";
 import { Body, LinkText } from "@/components/typography";
 import { Badge } from "./ui/badge";
 import { FollowingPreview } from "./following-preview";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 type ProjectItemProps = {
   name: string;
@@ -53,15 +54,22 @@ export function ProjectItem({
             {inDevelopment && <Badge variant="outline">In Development</Badge>}
           </a>
           {sourceHref && (
-            <a
-              href={sourceHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View source code for `}
-              className="flex shrink-0 items-center justify-center rounded-full p-1 text-neutral-500 transition-all hover:bg-neutral-300 hover:text-neutral-800"
-            >
-              <CodeIcon size={12} aria-hidden />
-            </a>
+            <Tooltip>
+              <TooltipTrigger>
+                <a
+                  href={sourceHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View source code for `}
+                  className="flex shrink-0 items-center justify-center rounded-full p-1 text-neutral-500 transition-all hover:bg-neutral-300 hover:text-neutral-800"
+                >
+                  <CodeIcon size={12} aria-hidden />
+                </a>
+                <TooltipContent className="bg-foreground">
+                  <p className="font-medium text-neutral-200">Source Code</p>
+                </TooltipContent>
+              </TooltipTrigger>
+            </Tooltip>
           )}
         </div>
         <div className="flex gap-2">

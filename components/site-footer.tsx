@@ -12,16 +12,20 @@ import {
 const socials = [
   {
     label: "Linkedin",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/shazab-saifi",
     Icon: LinkedinLogoIcon,
   },
-  { label: "Twitter", href: "https://x.com/", Icon: XLogoIcon },
+  { label: "Twitter", href: "https://x.com/shazabsaifi_s9", Icon: XLogoIcon },
   {
     label: "Email",
     href: "mailto:shazabdev@gmail.com",
     Icon: EnvelopeSimpleIcon,
   },
-  { label: "Github", href: "https://github.com/", Icon: GithubLogoIcon },
+  {
+    label: "Github",
+    href: "https://github.com/shazab-saifi",
+    Icon: GithubLogoIcon,
+  },
 ];
 
 export function SiteFooter() {
